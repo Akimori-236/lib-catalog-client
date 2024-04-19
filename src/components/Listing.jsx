@@ -15,6 +15,8 @@ export default function Listing() {
         return () => mounted = false;
     }, [])
 
+    // TODO: add toggle to switch between table and cards view
+
     return (<>
         <h1>Listing</h1>
         <table>

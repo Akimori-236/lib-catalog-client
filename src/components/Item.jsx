@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function Item(props) {
     return (
+        // TODO: change to cards instead
         <tr>
             <td>{props.key}</td>
             <td>{props.item.title}</td>
