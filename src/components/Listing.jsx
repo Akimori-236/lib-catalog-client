@@ -15,14 +15,12 @@ export default function Listing() {
         return () => mounted = false;
     }, [])
 
-    // TODO: add toggle to switch between table and cards view
-
     return (<>
-        <h1>Listing</h1>
-        <table>
+        <h1 className='text-danger'>Listing</h1>
+        <div className='row justify-content-around'>
             {items.map((item, index) => (
                 <Item key={index} item={item} />
             ))}
-        </table>
+        </div>
     </>);
 }
