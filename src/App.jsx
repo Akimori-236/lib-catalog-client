@@ -1,11 +1,12 @@
+import React, { useState } from "react";
 import "./App.css";
+import Nav from "./components/Nav";
 import Listing from "./components/Listing";
-import Navbar from "./components/navbar";
 
 function App() {
     return (
         <div className="container">
-            <Navbar />
+            <Nav className="navbar" />
             <Listing />
         </div>
     );
