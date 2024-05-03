@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import Item from './Item';
+import { useEffect, useState } from 'react';
+import ListGroup from 'react-bootstrap/ListGroup';
 import { getYamahaListings } from '../services/api';
+import Item from './Item';
+import Search from './Search';
 
 export default function Listing() {
     const [items, setItems] = useState([]);
@@ -16,11 +18,14 @@ export default function Listing() {
     }, [])
 
     return (<>
-        <h1 className='text-danger'>Listing</h1>
-        <div className='row justify-content-around'>
+        <div>
+            <h1 className='text-success'>Listing</h1>
+            {/*  TODO: filtering and sorting */}
+        </div>
+        <ListGroup className='row justify-content-around'>
             {items.map((item, index) => (
                 <Item key={index} item={item} />
             ))}
-        </div>
+        </ListGroup>
     </>);
 }

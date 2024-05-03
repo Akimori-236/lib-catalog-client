@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import Button from "react-bootstrap/Button";
 
 export default function ToggleTheme() {
   const [isDarkTheme, setIsDarkTheme] = useState(() => {
@@ -27,11 +28,11 @@ export default function ToggleTheme() {
   };
 
   return (
-    isDarkTheme ? <button onClick={toggleTheme} className=" p-1 m-1 btn btn-light">
+    isDarkTheme ? <Button variant="outline-light" onClick={toggleTheme} className=" p-1 m-1">
       ☀️Light
-    </button> :
-      <button onClick={toggleTheme} className="p-1 m-1 btn btn-dark">
+    </Button> :
+      <Button variant="outline-dark" onClick={toggleTheme} className="p-1 m-1">
         🌙Dark
-      </button>
+      </Button>
   );
 };

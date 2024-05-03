@@ -4,12 +4,14 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import DarkModeToggle from './DarkModeToggle';
+import Search from './Search';
+
 
 export default function MyNavBar(props) {
     const links = [{
-        name: "test", link: "/test"
+        name: "Profile", link: "/profile"
     }, {
-        name: "test2", link: "/test2"
+        name: "testing", link: "/testing"
     }]
 
     return (
@@ -19,7 +21,7 @@ export default function MyNavBar(props) {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-                        <Nav.Link href="#profile">Profile</Nav.Link>
+                        <Nav><Search /></Nav>
                         <NavDropdown title="Settings" id="basic-nav-dropdown">
                             {links.map((link, index) => {
                                 return <NavDropdown.Item key={index} href={link.link} >{link.name}</NavDropdown.Item>
