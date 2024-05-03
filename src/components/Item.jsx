@@ -10,7 +10,7 @@ export default function Item(props) {
                 </div>
             </h4>
             {/* <td>{props.item.image}</td> */}
-            <td>{props.item.publisher}</td>
+            <div>{props.item.publisher}</div>
 
             <div className='ms-auto mt-auto mb-2 me-0'>
                 <a href={props.item.link} className='btn btn-primary'>Shop</a>
