@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { getYamahaListings } from '../services/api';
 import Item from './Item';
-import Search from './Search';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Pagination from 'react-bootstrap/Pagination';
 
 export default function Listing() {
     const [items, setItems] = useState([]);
@@ -22,10 +24,23 @@ export default function Listing() {
             <h1 className='text-success'>Listing</h1>
             {/*  TODO: filtering and sorting */}
         </div>
-        <ListGroup className='row justify-content-around'>
-            {items.map((item, index) => (
-                <Item key={index} item={item} />
-            ))}
-        </ListGroup>
+        <Row>
+            <Col>
+                <Pagination>
+                    {/* TODO: pagination */}
+                    <Pagination.Prev />
+                    <Pagination.Item />
+                </Pagination>
+                <ListGroup className='row justify-content-around'>
+                    {items.map((item, index) => (
+                        <Item key={index} item={item} />
+                    ))}
+                </ListGroup>
+            </Col>
+            <Col>
+                {/* TODO: display details and playback of selected item, component here?
+                need to default select first item in list on initial load */}
+            </Col>
+        </Row>
     </>);
 }

@@ -1,13 +1,12 @@
-import React from 'react';
 import { Badge, ListGroup } from 'react-bootstrap';
 
 export default function Item(props) {
     return (
         <ListGroup.Item className="d-flex justify-content-between align-items-start">
-            <a  className="text-decoration-none text-reset ms-2 me-auto">
+            <a className="text-decoration-none text-reset ms-2 me-auto">
                 <h4>{props.item.title}</h4>
-                <br />
-                <div>{props.item.publisher}</div>
+                {/* <br /> */}
+                {/* <div>{props.item.publisher}</div> */}
             </a>
 
             <div className='ms-auto me-2'>

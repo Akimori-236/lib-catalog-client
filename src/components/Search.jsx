@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
@@ -15,17 +14,15 @@ export default function Search() {
 
 
     return (
-        <Row>
-            <Form onSubmit={handleSubmit}>
-                <FloatingLabel
-                    controlId="floatingInput"
-                    label="Search"
-                    className=""
-                >
-                    <Form.Control type="text" placeholder="" />
-                </FloatingLabel>
-                <Button variant="outline-success" type="submit">Search</Button>
-            </Form>
-        </Row>
+        <Form onSubmit={handleSubmit}>
+            <Row>
+                <Col className='m-0 p-0'>
+                    <Form.Control type="text" placeholder="Search" />
+                </Col>
+                <Col className='m-0 p-0'>
+                    <Button variant="outline-success" type="submit">Search</Button>
+                </Col>
+            </Row>
+        </Form>
     )
 }

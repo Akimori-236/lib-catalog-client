@@ -20,14 +20,14 @@ export default function MyNavBar(props) {
                 <Navbar.Brand className="navbar-brand" href="/">Home</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className='ms-auto'><Search /></Nav>
                     <Nav className="ms-auto">
-                        <Nav><Search /></Nav>
-                        <NavDropdown title="Settings" id="basic-nav-dropdown">
+                        <NavDropdown title="Settings" id="basic-nav-dropdown" className='my-auto'>
                             {links.map((link, index) => {
                                 return <NavDropdown.Item key={index} href={link.link} >{link.name}</NavDropdown.Item>
                             })}
                         </NavDropdown>
-                        <Nav><DarkModeToggle /></Nav>
+                        <Nav className='my-auto'><DarkModeToggle /></Nav>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
