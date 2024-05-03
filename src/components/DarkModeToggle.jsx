@@ -27,11 +27,11 @@ export default function ToggleTheme() {
   };
 
   return (
-    isDarkTheme ? <button onClick={toggleTheme} className="btn btn-light">
-      ☀️ Light Mode
+    isDarkTheme ? <button onClick={toggleTheme} className=" p-1 m-1 btn btn-light">
+      ☀️Light
     </button> :
-      <button onClick={toggleTheme} className="btn btn-dark">
-        🌙 Dark Mode
+      <button onClick={toggleTheme} className="p-1 m-1 btn btn-dark">
+        🌙Dark
       </button>
   );
 };

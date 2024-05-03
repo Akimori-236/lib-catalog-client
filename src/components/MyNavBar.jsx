@@ -21,11 +21,11 @@ export default function MyNavBar(props) {
                     <Nav className="ms-auto">
                         <Nav.Link href="#profile">Profile</Nav.Link>
                         <NavDropdown title="Settings" id="basic-nav-dropdown">
-                            <NavDropdown.Item><DarkModeToggle /></NavDropdown.Item>
                             {links.map((link, index) => {
                                 return <NavDropdown.Item key={index} href={link.link} >{link.name}</NavDropdown.Item>
                             })}
                         </NavDropdown>
+                        <Nav><DarkModeToggle /></Nav>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
