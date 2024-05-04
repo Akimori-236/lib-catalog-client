@@ -10,9 +10,9 @@ export default function Item(props) {
             </a>
 
             <div className='ms-auto me-2'>
-                <Badge bg="danger" className='my-2'>{props.item.price}</Badge>
+                <Badge pill bg="danger" className='my-2'>{props.item.price}</Badge>
                 <br />
-                <a href={props.item.link} className='btn btn-primary my-2'>Shop</a>
+                {/* <a href={props.item.link} className='btn btn-primary my-2'>Shop</a> */}
             </div>
         </ListGroup.Item>
     );
