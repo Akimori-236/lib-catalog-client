@@ -11,25 +11,22 @@ export default function Listing() {
     const limit = 10
     const [items, setItems] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const total = 100; // placeholder
+    const [total, setTotal] = useState(100);
+
     let offset = currentPage * limit - limit;
     let pages = Math.ceil(total / limit);
 
     useEffect(() => {
-        let mounted = true;
-        getDummyData(limit, offset)
-            .then(items => {
-                if (mounted) {
-                    setItems(items);
-                }
+        getData(limit, offset)
+            .then(body => {
+                setTotal(body['total']);
+                setItems(body['data']);
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
 
-        return () => {
-            mounted = false;
-        };
+
     }, [currentPage]);
 
     //////////
@@ -44,14 +41,14 @@ export default function Listing() {
         <Row >
             {/* <Col> */}
 
-                <ListGroup className='row justify-content-around'>
-                    {items.map((item, index) => (
-                        <Item key={index} item={item} />
-                    ))}
-                </ListGroup>
+            <ListGroup className='row justify-content-around'>
+                {items.map((item, index) => (
+                    <Item key={index} item={item} />
+                ))}
+            </ListGroup>
             {/* </Col> */}
             {/* <ColclassName='border'> */}
-                {/* TODO: display details and playback of selected item, component here?
+            {/* TODO: display details and playback of selected item, component here?
                 need to default select first item in list on initial load */}
             {/* </Col> */}
         </Row>
