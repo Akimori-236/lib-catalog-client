@@ -1,4 +1,4 @@
-[![My Skills](https://skillicons.dev/icons?i=react,vite,redux,,docker,vercel,bootstrap,,js,html,css&perline=20)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=react,vite,redux,,docker,npm,vercel,bootstrap,,js,html,css&perline=20)](https://skillicons.dev)
 
 # Client for Catalog
 
