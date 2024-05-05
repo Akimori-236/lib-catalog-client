@@ -6,6 +6,7 @@ export default function MyPagination({ pages, currentPage, setCurrentPage }) {
             {currentPage === 1 ? <Pagination.Prev disabled /> : <Pagination.Prev />}
             {[...Array(pages).keys()]
                 .map(i => {
+                    // FIXME: truncate pages to 1 ... 8,9,10,11,12 ... last, if page 10
                     if (currentPage === i + 1) {
                         return <Pagination.Item active key={i} onClick={() => setCurrentPage(i + 1)}>{i + 1}</Pagination.Item>
                     } else {

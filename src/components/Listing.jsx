@@ -11,22 +11,16 @@ export default function Listing() {
     const limit = 10
     const [items, setItems] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [total, setTotal] = useState(100);
+    const [total, setTotal] = useState(0);
 
     let offset = currentPage * limit - limit;
     let pages = Math.ceil(total / limit);
 
     useEffect(() => {
-        getData(limit, offset)
-            .then(body => {
-                setTotal(body['total']);
-                setItems(body['data']);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-
-
+        getData(limit, offset, ({ data, total }) => {
+            setItems(data);
+            setTotal(total);
+        });
     }, [currentPage]);
 
     //////////
@@ -42,9 +36,13 @@ export default function Listing() {
             {/* <Col> */}
 
             <ListGroup className='row justify-content-around'>
-                {items.map((item, index) => (
-                    <Item key={index} item={item} />
-                ))}
+                {items.length === 0 ? (
+                    <div>Loading...</div>
+                ) : (
+                    items.map((item, index) => (
+                        <Item key={index} item={item} />
+                    ))
+                )}
             </ListGroup>
             {/* </Col> */}
             {/* <ColclassName='border'> */}

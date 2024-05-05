@@ -1,8 +1,16 @@
+import { useEffect, useState } from 'react';
 import { Badge, ListGroup } from 'react-bootstrap';
 
 export default function Item(props) {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
-        <ListGroup.Item className="d-flex justify-content-between align-items-start">
+        <ListGroup.Item
+            action
+            onClick={handleShow}
+            className="d-flex justify-content-between align-items-start">
             <a className="text-decoration-none text-reset ms-2 me-auto">
                 <h4>{props.item.title}</h4>
                 {/* <br /> */}
