@@ -1,3 +1,5 @@
+[![My Skills](https://skillicons.dev/icons?i=react,vite,redux,angular,express,nodejs,spring,flask,mysql,redis,mongodb,,docker,vercel,selenium,bootstrap,js,html,css)](https://skillicons.dev)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
