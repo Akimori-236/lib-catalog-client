@@ -1,8 +1,8 @@
-[![My Skills](https://skillicons.dev/icons?i=react,vite,redux,angular,express,nodejs,spring,flask,mysql,redis,mongodb,,docker,vercel,selenium,bootstrap,js,html,css)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=react,vite,redux,,docker,vercel,bootstrap,,js,html,css&perline=20)](https://skillicons.dev)
 
-# Getting Started with Create React App
+# Client for Catalog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the client side for the sheet music catalog web app
 
 ## Available Scripts
 
