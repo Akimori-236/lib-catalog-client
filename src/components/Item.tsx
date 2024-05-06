@@ -12,13 +12,13 @@ const Item = (props: any) => {
             onClick={handleShow}
             className="d-flex justify-content-between align-items-start">
             <a className="text-decoration-none text-reset ms-2 me-auto">
-                <h4>{props.item.title}</h4>
+                {props.item.title ? <h6>{props.item.title}</h6> : null}
                 {/* <br /> */}
                 {/* <div>{props.item.publisher}</div> */}
             </a>
 
             <div className='ms-auto me-2'>
-                <Badge pill bg="danger" className='my-2'>{props.item.price}</Badge>
+                {props.item.price ? <Badge pill bg="danger" className='my-2'>{props.item.price}</Badge> : null}
                 <br />
                 {/* <a href={props.item.link} className='btn btn-primary my-2'>Shop</a> */}
             </div>

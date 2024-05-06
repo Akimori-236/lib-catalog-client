@@ -14,7 +14,7 @@ export async function getDummyData(limit: number, offset: number, callback: Func
         });
 }
 
-export function getData(limit: number, offset: number, callback: Function) {
+export async function getData(limit: number, offset: number, callback: Function) {
     fetch(`http://localhost:8080/api?limit=${limit}&offset=${offset}`)
         .then((response) => {
             if (!response.ok) {
