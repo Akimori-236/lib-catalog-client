@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
+import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { getDummyData, getData } from '../services/api';
-import Item from './Item';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Spinner from 'react-bootstrap/Spinner';
+import { getData, getDummyData } from '../services/api';
+import Item from './Item';
 
 import MyPagination from './MyPagination';
 
@@ -35,25 +36,29 @@ const Listing = () => {
         <Row>
             <MyPagination pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
         </Row>
-        <Row >
-            {/* <Col> */}
-
-            <ListGroup className='row justify-content-around'>
-                {loading ? (
-                    <div>Loading...</div>
-                    // spinner
-                ) : (
-                    items.map((item, index) => (
-                        <Item key={index} item={item} />
-                    ))
-                )}
-            </ListGroup>
-            {/* </Col> */}
-            {/* <ColclassName='border'> */}
-            {/* TODO: display details and playback of selected item, component here?
-                need to default select first item in list on initial load */}
-            {/* </Col> */}
-        </Row>
+        {loading ? (<Button variant="success" disabled className='mx-0 my-2'>
+            <Spinner
+                className='me-2'
+                as="span"
+                animation="grow"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+            />
+            Loading...
+        </Button>) : (
+            <Row>
+                <ListGroup className='mx-0 row justify-content-around'>
+                    {loading ? (
+                        <div>Loading...</div>
+                    ) : (
+                        items.map((item, index) => (
+                            <Item key={index} item={item} />
+                        ))
+                    )}
+                </ListGroup>
+            </Row>
+        )}
     </>);
 }
 
