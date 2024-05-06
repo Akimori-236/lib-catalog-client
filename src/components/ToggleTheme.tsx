@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 
-export default function ToggleTheme() {
+const ToggleTheme = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(() => {
     const savedTheme: string | null = localStorage.getItem("theme");
     if (savedTheme === "dark") {
@@ -36,3 +36,5 @@ export default function ToggleTheme() {
       </Button>
   );
 };
+
+export default ToggleTheme;

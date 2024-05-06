@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 
 import MyPagination from './MyPagination';
 
-export default function Listing() {
+const Listing = () => {
     const limit = 10
     const [items, setItems] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -23,14 +23,13 @@ export default function Listing() {
         });
     }, [currentPage]);
 
-    //////////
     return (<>
         <div>
             <h1 className='text-success'>Listing</h1>
             {/*  TODO: filtering and sorting */}
         </div>
         <Row>
-        <MyPagination pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+            <MyPagination pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
         </Row>
         <Row >
             {/* <Col> */}
@@ -52,3 +51,5 @@ export default function Listing() {
         </Row>
     </>);
 }
+
+export default Listing;

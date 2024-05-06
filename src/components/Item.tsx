@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Badge, ListGroup } from 'react-bootstrap';
 
-export default function Item(props: any) {
+const Item = (props: any) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -25,3 +25,5 @@ export default function Item(props: any) {
         </ListGroup.Item>
     );
 }
+
+export default Item;
