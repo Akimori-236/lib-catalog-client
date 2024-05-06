@@ -1,4 +1,3 @@
-import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,7 +6,7 @@ import DarkModeToggle from './DarkModeToggle';
 import Search from './Search';
 
 
-export default function MyNavBar(props) {
+export default function MyNavBar() {
     const links = [{
         name: "Profile", link: "/profile"
     }, {

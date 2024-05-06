@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Badge, ListGroup } from 'react-bootstrap';
 
-export default function Item(props) {
+export default function Item(props: any) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);

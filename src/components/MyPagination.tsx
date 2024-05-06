@@ -1,6 +1,13 @@
+import React from 'react';
 import Pagination from 'react-bootstrap/Pagination';
 
-export default function MyPagination({ pages, currentPage, setCurrentPage }) {
+interface MyPaginationProps {
+    pages: number;
+    currentPage: number;
+    setCurrentPage: Function;
+}
+
+const MyPagination: React.FC<MyPaginationProps> = ({ pages, currentPage, setCurrentPage }) => {
     return (
         <Pagination>
             {currentPage === 1 ? <Pagination.Prev disabled /> : <Pagination.Prev />}
@@ -17,3 +24,5 @@ export default function MyPagination({ pages, currentPage, setCurrentPage }) {
         </Pagination>
     )
 }
+
+export default MyPagination;

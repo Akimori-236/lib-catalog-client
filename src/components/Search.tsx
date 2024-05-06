@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 
 export default function Search() {
 
-    function handleSubmit(event) {
+    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         // TODO: search api call to server
     }

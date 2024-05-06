@@ -17,7 +17,7 @@ export default function Listing() {
     let pages = Math.ceil(total / limit);
 
     useEffect(() => {
-        getData(limit, offset, ({ data, total }) => {
+        getData(limit, offset, (data: any, total: number) => {
             setItems(data);
             setTotal(total);
         });
@@ -30,7 +30,7 @@ export default function Listing() {
             {/*  TODO: filtering and sorting */}
         </div>
         <Row>
-            <MyPagination pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        <MyPagination pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
         </Row>
         <Row >
             {/* <Col> */}

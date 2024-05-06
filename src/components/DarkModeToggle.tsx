@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 
 export default function ToggleTheme() {
   const [isDarkTheme, setIsDarkTheme] = useState(() => {
-    const savedTheme = localStorage.getItem("theme");
+    const savedTheme: string | null = localStorage.getItem("theme");
     if (savedTheme === "dark") {
       document.documentElement.setAttribute("data-bs-theme", "dark");
     } else {
