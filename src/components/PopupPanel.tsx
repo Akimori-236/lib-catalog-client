@@ -3,15 +3,15 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 
-export default function PopupPanel(props) {
+const PopupPanel = (props: any) => {
     const breakpoint = 'sm-down'
-    const [fullscreen, setFullscreen] = useState(true);
-  const [show, setShow] = useState(false);
+    const [fullscreen, setFullscreen] = useState("md-down");
+    const [show, setShow] = useState(false);
 
-    function handleShow(breakpoint) {
+    function handleShow(breakpoint: any) {
         setFullscreen(breakpoint);
         setShow(true);
-      }
+    }
     return (
         <>
             <Button className="me-2 mb-2" onClick={() => handleShow(breakpoint)}>
@@ -27,3 +27,5 @@ export default function PopupPanel(props) {
         </>
     );
 }
+
+export default PopupPanel;

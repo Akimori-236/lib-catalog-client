@@ -5,13 +5,11 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
 
-export default function Search() {
-
-    function handleSubmit(event) {
+const Search = () => {
+    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         // TODO: search api call to server
     }
-
 
     return (
         <Form onSubmit={handleSubmit}>
@@ -26,3 +24,5 @@ export default function Search() {
         </Form>
     )
 }
+
+export default Search;

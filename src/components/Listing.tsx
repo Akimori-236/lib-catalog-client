@@ -7,23 +7,26 @@ import Col from 'react-bootstrap/Col';
 
 import MyPagination from './MyPagination';
 
-export default function Listing() {
-    const limit = 10
+const Listing = () => {
     const [items, setItems] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [total, setTotal] = useState(0);
+    const limit = 10
+    const [loading, setLoading] = useState(true);
 
     let offset = currentPage * limit - limit;
     let pages = Math.ceil(total / limit);
 
     useEffect(() => {
-        getData(limit, offset, ({ data, total }) => {
-            setItems(data);
-            setTotal(total);
+        setLoading(true);
+        getData(limit, offset, (result: any) => {
+            console.log(result.data);
+            setItems(result.data);
+            setTotal(result.total);
+            setLoading(false);
         });
     }, [currentPage]);
 
-    //////////
     return (<>
         <div>
             <h1 className='text-success'>Listing</h1>
@@ -36,8 +39,9 @@ export default function Listing() {
             {/* <Col> */}
 
             <ListGroup className='row justify-content-around'>
-                {items.length === 0 ? (
+                {loading ? (
                     <div>Loading...</div>
+                    // spinner
                 ) : (
                     items.map((item, index) => (
                         <Item key={index} item={item} />
@@ -52,3 +56,5 @@ export default function Listing() {
         </Row>
     </>);
 }
+
+export default Listing;
